@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang='cs'>
+  <head>
+    
+    <meta charset='utf-8'/>
+	<script>
+		function getCurrency(country){
+			switch(country){
+			case "Australia":
+				return "AUD Australian dollar";
+				break;
+			case "Ireland":
+				return "Euro";
+				break;
+			case "England":
+				return "Sterling";
+				break;
+			case "China":
+				return "Chinese yuan renminbi (RMB)";
+				break;
+			case "Egypt":
+				return "EGP Egyptian pound";
+				break;
+			case "Iceland":
+				return "ISK Icelandic krona";
+				break;
+			default:
+				return "not known";
+			}
+		}
+		
+		function range(x1,x2){
+			let res = "";
+			while(x1 < x2 - 1){
+				res += ++x1 + ", ";
+			}
+			return res;
+		}
+		
+		
+		function factorial(num){
+			let res = 1;
+			for(let i = 1; i < num; i++){
+				res = res * i;
+			}
+			return res;
+		}
+		
+		console.log(factorial(5));
+	</script>
+    <title>Lab4</title>
+	</head>
+	
+	<body>
+		<script>
+		/*let country = window.prompt("Enter the country");
+		switch(country){
+			case "Australia":
+				alert("AUD Australian dollar");
+				break;
+			case "Ireland":
+				alert("Euro");
+				break;
+			case "England":
+				alert("Sterling");
+				break;
+			case "China":
+				alert("Chinese yuan renminbi (RMB)");
+				break;
+			case "Egypt":
+				alert("EGP Egyptian pound");
+				break;
+			case "Iceland":
+				alert("ISK Icelandic krona");
+				break;
+			default:
+				alert("not known");
+		}*/
+	</script><br><br><br>
+	
+	
+	
+	
+	
+	
+	<label for="country">Enter counry</label><input id="counry"><br>
+	<input type="button" value="click to find out a county currency" onclick="{
+		let country = document.getElementById('counry').value;
+		document.getElementById('currency2').value = getCurrency(country);
+		}"><br>
+	<input disabled="true" id="currency2" ><br>
+	
+	
+	<textarea rows="30" cols="4" id="numbers">
+	</textarea>
+	<script>
+	for(let i = 1; i < 100; i++){
+		if(i%2 === 0){
+			document.getElementById("numbers").value += i + "\n";
+		}
+	}
+	</script><br><br><br>
+	
+	
+	<script>
+	function printPriceChart(amount){
+	document.getElementById("brushes").value = "";
+	let row = 0;
+		do{
+			document.getElementById("brushes").value += `${++row}-${row * 5} \n`;
+		}
+		while(row<amount);
+	}
+	</script>
+	<label for="rows">Enter amount of rows you want to see below</label><input id="rows"><br>
+	<input type="button" value="Print" onclick="{
+		printPriceChart(document.getElementById('rows').value);
+	}">
+	<textarea rows="20" cols="10" id="brushes">
+	</textarea>
+	</body>
+</html>
+   
